@@ -8,7 +8,7 @@ define( function( require ) {
 	PHP7CC.setCommand( 'php {{path}} --level={{level}} {{file}}' );
 	
 	PHP7CC.buildCommand = function( file ) {
-		var level = this.concatenateArray( this._preferences.get( 'php7-opts' ) );
+		var level = this.concatenateArray( this._preferences.get( 'php7cc-opts' ) );
 		
 		return this._command
 			.replace( '{{path}}', this._path )
@@ -23,7 +23,7 @@ define( function( require ) {
 	};
 	
 	PHP7CC.shouldRun = function() {
-		return this._preferences.get( 'php7-opts' ) !== false;
+		return this._preferences.get( 'php7cc-opts' ) !== false;
 	};
 	
 	PHP7CC.callback = function( data ) {

@@ -36,7 +36,7 @@ define( function( require, exports ) {
 			PHPLocation: ParserManager.sanitizePHPLocation( phpLocation ),
 			enabledTools: getCheckboxArray( 'enabled' ),
 			phpcsStandards: getCheckboxArray( 'phpcs-standards' ),
-			php7ccOpts: getCheckboxArray( 'php7-opts' ),
+			php7ccOpts: getCheckboxArray( 'php7cc-opts' ),
 			phpcsfixerLevel: getCheckboxArray( 'phpcsfixer-level' ),
 			phpmdRulesets: getCheckboxArray( 'phpmd-rulesets' )
 		};
@@ -53,6 +53,50 @@ define( function( require, exports ) {
 			return this.value;
 		} ).get();
 	}
+
+
+
+
+	/**
+	 * Set each value of the preferences in dialog.
+	 */
+	function setValues( values ) {
+		setCheckboxesFromArray( 'enabled', values.enabledTools );
+		setCheckboxesFromArray( 'phpcs-standards', values.phpcsStandards );
+		setCheckboxesFromArray( 'phpcsfixer-level', values.phpcsfixerLevel );
+		setCheckboxesFromArray( 'php7cc-opts', values.php7ccOpts );
+		setCheckboxesFromArray( 'phpmd-rulesets', values.phpmdRulesets );
+		$dialog.find( 'input[ name="php_location" ]' ).val( values.PHPLocation );
+	}
+	
+	/**
+	 * Check checkboxes according to valuess in array.
+	 */
+	function setCheckboxesFromArray( name, valueArray ) {
+		// Walk through each checkbox in dialog with supplied name.
+		$dialog.find( 'input[ name="' + name + '[]" ]' ).each( function( index, element ) {
+			var $this = $( element );
+			// Make checkbox checked if its value is in array.
+			$this.prop( 'checked', valueArray.indexOf( $this.prop( 'value' ) ) !== -1 );
+		} );
+	}
+	
+	/**
+	 * Initialize dialog values.
+	 */
+	function init() {
+		var values = {
+			enabledTools: preferences.get( 'enabled-tools' ),
+			phpcsStandards: preferences.get( 'phpcs-standards' ),
+			phpcsfixerLevel: preferences.get('phpcsfixer-level'),
+			php7ccOpts: preferences.get('php7cc-opts'),
+			phpmdRulesets: preferences.get( 'phpmd-rulesets' ),
+			PHPLocation: preferences.get( 'php-location' ),
+		};
+		
+		setValues( values );
+	}
+    
 
 	/**
 	 * Make sure CS Fixer only has one checkbox checked at any one time.
@@ -97,47 +141,6 @@ define( function( require, exports ) {
 	}
 
 
-	/**
-	 * Set each value of the preferences in dialog.
-	 */
-	function setValues( values ) {
-		setCheckboxesFromArray( 'enabled', values.enabledTools );
-		setCheckboxesFromArray( 'phpcs-standards', values.phpcsStandards );
-		setCheckboxesFromArray( 'phpcsfixer-level', values.phpcsfixerLevel );
-		setCheckboxesFromArray( 'php7-opts', values.php7ccOpts );
-		setCheckboxesFromArray( 'phpmd-rulesets', values.phpmdRulesets );
-		$dialog.find( 'input[ name="php_location" ]' ).val( values.PHPLocation );
-	}
-	
-	/**
-	 * Check checkboxes according to valuess in array.
-	 */
-	function setCheckboxesFromArray( name, valueArray ) {
-		// Walk through each checkbox in dialog with supplied name.
-		$dialog.find( 'input[ name="' + name + '[]" ]' ).each( function( index, element ) {
-			var $this = $( element );
-			
-			// Make checkbox checked if its value is in array.
-			$this.prop( 'checked', valueArray.indexOf( $this.attr( 'value' ) ) !== -1 );
-		} );
-	}
-	
-	/**
-	 * Initialize dialog values.
-	 */
-	function init() {
-		var values = {
-			enabledTools: preferences.get( 'enabled-tools' ),
-			phpcsStandards: preferences.get( 'phpcs-standards' ),
-			phpcsfixerLevel: preferences.get('phpcsfixer-level'),
-			php7ccOpts: preferences.get('php7-opts'),
-			phpmdRulesets: preferences.get( 'phpmd-rulesets' ),
-			PHPLocation: preferences.get( 'php-location' ),
-		};
-		
-		setValues( values );
-	}
-	
 	/**
 	 * Exposed method to show dialog.
 	 */
@@ -198,7 +201,7 @@ define( function( require, exports ) {
 				preferences.set( 'enabled-tools', values.enabledTools );
 				preferences.set( 'phpcs-standards', values.phpcsStandards );
 				preferences.set( 'phpcsfixer-level', values.phpcsfixerLevel);
-				preferences.set( 'php7-opts', values.php7ccOpts);
+				preferences.set( 'php7cc-opts', values.php7ccOpts);
 				preferences.set( 'phpmd-rulesets', values.phpmdRulesets );
 				preferences.set( 'php-location', values.PHPLocation );
 				

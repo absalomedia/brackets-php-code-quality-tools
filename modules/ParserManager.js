@@ -17,12 +17,18 @@ define( function( require ) {
 		phpl = require( 'modules/parsers/phpl' ),
 		phpmd = require( 'modules/parsers/phpmd' ),
 		phpcpd = require( 'modules/parsers/phpcpd' ),
-		phpcs = require( 'modules/parsers/phpcs' ),
+		phpcsfixer = require( 'modules/parsers/phpcsfixer' ),
+		phpsa = require( 'modules/parsers/phpsa' ),
+		php7cc = require( 'modules/parsers/php7cc' ),
+        phpcs = require( 'modules/parsers/phpcs' ),
 		parsers = [
 			phpl,
 			phpcpd,
 			phpcs,
-			phpmd
+            phpcsfixer,
+            phpsa,
+            php7cc,
+			phpmd,
 		],
 		
 		// Setup extension.
@@ -97,7 +103,37 @@ define( function( require ) {
 						};
 					}
 				} );
-				
+                
+				CodeInspection.register( 'php', {
+					name: phpcsfixer.name(),
+					scanFile: function() {
+						return {
+							errors: phpcsfixer.errors()
+						};
+					}
+				} );
+                
+				CodeInspection.register( 'php', {
+					name: phpsa.name(),
+					scanFile: function() {
+						return {
+							errors: phpsa.errors()
+						};
+					}
+				} );
+                
+				CodeInspection.register( 'php', {
+					name: php7cc.name(),
+					scanFile: function() {
+						return {
+							errors: php7cc.errors()
+						};
+					}
+				} );
+
+                
+                
+                
 				CodeInspection.register( 'php', {
 					name: phpmd.name(),
 					scanFile: function() {
