@@ -13,6 +13,7 @@ define( function( require, exports, module ) {
 		ExtensionUtils = brackets.getModule( 'utils/ExtensionUtils' ),
 		Menus = brackets.getModule( 'command/Menus' ),
 		PreferencesManager = brackets.getModule( 'preferences/PreferencesManager' ),
+        Mustache = brackets.getModule("thirdparty/mustache/mustache"),
 		
 		// Extension Modules.
 		Defaults = require( 'modules/Defaults' ),
