@@ -5,52 +5,52 @@
  * @author Mikael Jorhult
  * @license http://mikaeljorhult.mit-license.org MIT
  */
-define( function( require, exports, module ) {
+define(function(require, exports, module ) {
 	'use strict';
-	
+
 	// Get module dependencies.
-	var CommandManager = brackets.getModule( 'command/CommandManager' ),
-		ExtensionUtils = brackets.getModule( 'utils/ExtensionUtils' ),
-		Menus = brackets.getModule( 'command/Menus' ),
-		PreferencesManager = brackets.getModule( 'preferences/PreferencesManager' ),
-        Mustache = brackets.getModule("thirdparty/mustache/mustache"),
-		
+	var CommandManager = brackets.getModule('command/CommandManager'),
+		ExtensionUtils = brackets.getModule('utils/ExtensionUtils'),
+		Menus = brackets.getModule('command/Menus'),
+		PreferencesManager = brackets.getModule('preferences/PreferencesManager'),
+      Mustache = brackets.getModule('thirdparty/mustache/mustache'),
+
 		// Extension Modules.
-		Defaults = require( 'modules/Defaults' ),
-		ParserManager = require( 'modules/ParserManager' ), // jshint ignore:line
-		SettingsDialog = require( 'modules/SettingsDialog' ),
-		Strings = require( 'modules/Strings' ),
-		
+		Defaults = require('modules/Defaults'),
+		ParserManager = require('modules/ParserManager'), // jshint ignore:line
+		SettingsDialog = require('modules/SettingsDialog'),
+		Strings = require('modules/Strings'),
+
 		// Setup extension.
 		COMMAND_ID_SETTINGS = 'mikaeljorhult.bracketsPHPLintTools.settings',
-		preferences = PreferencesManager.getExtensionPrefs( 'mikaeljorhult.bracketsPHPLintTools' ),
-		
+		preferences = PreferencesManager.getExtensionPrefs('mikaeljorhult.bracketsPHPLintTools'),
+
 		// Hook into menus.
-		menu = Menus.getMenu( Menus.AppMenuBar.VIEW_MENU );
-	
+		menu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
+
 	// Define preferences.
-	preferences.definePreference( 'php-available', 'boolean', false );
-	preferences.definePreference( 'enabled-tools', 'array', Defaults.enabledTools );
-	preferences.definePreference( 'phpcs-standards', 'array', Defaults.phpcsStandards );
-	preferences.definePreference( 'phpmd-rulesets', 'array', Defaults.phpmdRulesets );
-	preferences.definePreference( 'php7cc-opts', 'array', Defaults.php7ccOpts );	
-    preferences.definePreference( 'phpcsfixer-level', 'array', Defaults.phpcsfixerLevel );
-	preferences.definePreference( 'php-location', 'string', Defaults.PHPLocation );
-	
+	preferences.definePreference('php-available', 'boolean', false);
+	preferences.definePreference('enabled-tools', 'array', Defaults.enabledTools);
+	preferences.definePreference('phpcs-standards', 'array', Defaults.phpcsStandards);
+	preferences.definePreference('phpmd-rulesets', 'array', Defaults.phpmdRulesets);
+	preferences.definePreference('php7cc-opts', 'array', Defaults.php7ccOpts);
+  preferences.definePreference('phpcsfixer-level', 'array', Defaults.phpcsfixerLevel);
+	preferences.definePreference('php-location', 'string', Defaults.PHPLocation);
+
 	// Register extension.
-	CommandManager.register( Strings.EXTENSION_NAME, COMMAND_ID_SETTINGS, showSettingsDialog );
-	
+	CommandManager.register(Strings.EXTENSION_NAME, COMMAND_ID_SETTINGS, showSettingsDialog);
+
 	// Add command to menu.
-	if ( menu !== undefined ) {
+	if (menu !== undefined) {
 		menu.addMenuDivider();
-		menu.addMenuItem( COMMAND_ID_SETTINGS );
+		menu.addMenuItem(COMMAND_ID_SETTINGS);
 	}
-	
+
 	// Load stylesheet.
-	ExtensionUtils.loadStyleSheet( module, 'php-tools.css' );
-	
+	ExtensionUtils.loadStyleSheet(module, 'php-tools.css');
+
 	// Show settings dialog.
 	function showSettingsDialog() {
-		SettingsDialog.show( preferences );
+		SettingsDialog.show(preferences);
 	}
-} );
+});
