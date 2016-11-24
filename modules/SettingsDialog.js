@@ -6,7 +6,6 @@ define(function(require, exports) {
       Defaults = require('modules/Defaults') ,
       Strings = require('modules/Strings') ,
       ParserManager = require('modules/ParserManager') ,
-      Mustache = require('thirdparty/mustache/mustache') ,
       // Templates.
       settingsDialogTemplate = require('text!../html/settings-dialog.html') ,
       // Variables.
@@ -88,13 +87,13 @@ define(function(require, exports) {
       $('#phpcsfixer-level[!value="all"]').prop('checked', false);
         }
         if ($('#phpcsfixer-level[]').val() === 'psr0') {
-      $('#phpcsfixer-level[!value="prs0"]').prop('checked', false);
+      $('#phpcsfixer-level[!value="psr0"]').prop('checked', false);
         }
         if ($('#phpcsfixer-level[]').val() === 'psr1') {
-      $('#phpcsfixer-level[!value="prs1"]').prop('checked', false);
+      $('#phpcsfixer-level[!value="psr1"]').prop('checked', false);
         }
         if ($('#phpcsfixer-level[]').val() === 'psr2') {
-      $('#phpcsfixer-level[!value="prs2"]').prop('checked', false);
+      $('#phpcsfixer-level[!value="psr2"]').prop('checked', false);
         }
         if ($('#phpcsfixer-level[]').val() === 'symfony') {
       $('#phpcsfixer-level[!value="symfony"]').prop('checked', false);
