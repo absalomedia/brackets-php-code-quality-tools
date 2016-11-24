@@ -6,6 +6,7 @@ define(function(require, exports) {
       Defaults = require('modules/Defaults') ,
       Strings = require('modules/Strings') ,
       ParserManager = require('modules/ParserManager') ,
+      Mustache = require('thirdparty/mustache/mustache') ,
       // Templates.
       settingsDialogTemplate = require('text!../html/settings-dialog.html') ,
       // Variables.
