@@ -2,10 +2,12 @@ define(function(require, exports) {
   'use strict';
   // Get module dependencies.
   var Dialogs = brackets.getModule('widgets/Dialogs') ,
+      Mustache = brackets.getModule('thirdparty/mustache/mustache'),
       // Extension Modules.
       Defaults = require('modules/Defaults') ,
       Strings = require('modules/Strings') ,
       ParserManager = require('modules/ParserManager') ,
+      
       // Templates.
       settingsDialogTemplate = require('text!../html/settings-dialog.html') ,
       // Variables.
