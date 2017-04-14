@@ -19,7 +19,6 @@ define( function( require ) {
 		phpcpd = require( 'modules/parsers/phpcpd' ),
 		phpcsfixer = require( 'modules/parsers/phpcsfixer' ),
 		phpsa = require( 'modules/parsers/phpsa' ),
-		php7cc = require( 'modules/parsers/php7cc' ),
         phpcs = require( 'modules/parsers/phpcs' ),
 		parsers = [
 			phpl,
@@ -27,7 +26,6 @@ define( function( require ) {
 			phpcs,
             phpcsfixer,
             phpsa,
-            php7cc,
 			phpmd,
 		],
 		
@@ -121,19 +119,7 @@ define( function( require ) {
 						};
 					}
 				} );
-                
-				CodeInspection.register( 'php', {
-					name: php7cc.name(),
-					scanFile: function() {
-						return {
-							errors: php7cc.errors()
-						};
-					}
-				} );
-
-                
-                
-                
+                                
 				CodeInspection.register( 'php', {
 					name: phpmd.name(),
 					scanFile: function() {
