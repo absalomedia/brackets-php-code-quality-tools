@@ -82,37 +82,14 @@ define(function(require, exports) {
         setValues(values);
   }
   /**
-     * Make sure CS Fixer only has one checkbox checked at any one time.
+     * Make sure CS Fixer can check anything if not set to default.
      */
   function fixerCheck() {
-        if ($('#phpcsfixer-level[]').val() === 'all') {
-      $('#phpcsfixer-level[!value="all"]').prop('checked', false);
-        }
-        if ($('#phpcsfixer-level[]').val() === 'psr0') {
-      $('#phpcsfixer-level[!value="psr0"]').prop('checked', false);
-        }
-        if ($('#phpcsfixer-level[]').val() === 'psr1') {
-      $('#phpcsfixer-level[!value="psr1"]').prop('checked', false);
-        }
-        if ($('#phpcsfixer-level[]').val() === 'psr2') {
-      $('#phpcsfixer-level[!value="psr2"]').prop('checked', false);
-        }
-        if ($('#phpcsfixer-level[]').val() === 'symfony') {
-      $('#phpcsfixer-level[!value="symfony"]').prop('checked', false);
+        if ($('#phpcsfixer-level[]').val() === '') {
+      $('#phpcsfixer-level[!value=""]').prop('checked', false);
         }
   }
 
-  function php7Check() {
-        if ($('#php7-opts[]').val() === 'error') {
-      $('#php7-opts[!value="error"]').prop('checked', false);
-        }
-        if ($('#php7-opts[]').val() === 'warning') {
-      $('#php7-opts[!value="warning"]').prop('checked', false);
-        }
-        if ($('#php7-opts[]').val() === 'info') {
-      $('#php7-opts[!value="info"]').prop('checked', false);
-        }
-  }
   /**
      * Exposed method to show dialog.
      */
@@ -163,7 +140,6 @@ define(function(require, exports) {
                 preferences.set('enabled-tools', values.enabledTools);
                 preferences.set('phpcs-standards', values.phpcsStandards);
                 preferences.set('phpcsfixer-level', values.phpcsfixerLevel);
-                preferences.set('php7cc-opts', values.php7ccOpts);
                 preferences.set('phpmd-rulesets', values.phpmdRulesets);
                 preferences.set('php-location', values.PHPLocation);
                 preferences.save();

@@ -54,32 +54,21 @@
             </p>
             <p>{{ Strings.SETTINGS_DIALOG_STANDARDS }}</p>
             <p class="columns clearfix">
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="" /> Default </label>
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="psr0" /> PSR-0 </label>
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="@psr1" /> PSR-1 </label>
                 <label>
-                    <input type="checkbox" name="phpcsfixer-level[]" value="" /> All </label>
-                <label>
-                    <input type="checkbox" name="phpcsfixer-level[]" value="psr0" /> PSR-0 </label>
-                <label>
-                    <input type="checkbox" name="phpcsfixer-level[]" value="psr1" /> PSR-1 </label>
-                <label>
-                    <input type="checkbox" name="phpcsfixer-level[]" value="psr2" /> PSR-2 </label>
-                <label>
-                    <input type="checkbox" name="phpcsfixer-level[]" value="symfony" /> Symfony </label>
-            </p>
-        </fieldset>
-        <fieldset class="tool tool-php7cc">
-            <legend>PHP 7 Compatibility Checker</legend>
-            <p>
-                <label>
-                    <input type="checkbox" name="enabled[]" value="php7cc" /> {{ Strings.SETTINGS_DIALOG_ENABLE }} </label>
-            </p>
-            <p>{{ Strings.SETTINGS_DIALOG_STANDARDS }}</p>
-            <p class="columns clearfix">
-                <label>
-                    <input type="checkbox" name="php7cc-opts[]" value="error" onclick="php7Check();" /> Error </label>
-                <label>
-                    <input type="checkbox" name="php7cc-opts[]" value="warning" onclick="php7Check();" /> Warning </label>
-                <label>
-                    <input type="checkbox" name="php7cc-opts[]" value="info" onclick="php7Check();" /> Info </label>
+                <input type="checkbox" name="phpcsfixer-level[]" value="@psr2" /> PSR-2 </label>
+                <label> <input type="checkbox" name="phpcsfixer-level[]" value="psr4" /> PSR-4 </label>                
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="@symfony" /> Symfony </label>
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="class_keyword_remove" /> Class Keyword (PHP 5.5+) </label>
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="declare_strict_types" /> Declare Strict (PHP 7+) </label>
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="
+linebreak_after_opening_tag" /> Opening Linebreak </label>
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="mb_str_functions" /> Multibyte Strings </label>
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="no_php4_constructor" /> No PHP4 Construct </label>
+                <label><input type="checkbox" name="phpcsfixer-level[]" value="no_short_echo_tag" /> No Short Echo </label>
+                
             </p>
         </fieldset>
         <fieldset class="tool tool-phpcpd">
