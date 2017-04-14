@@ -30,7 +30,6 @@ define(function(require, exports) {
       PHPLocation: ParserManager.sanitizePHPLocation(phpLocation) ,
           enabledTools: getCheckboxArray('enabled') ,
           phpcsStandards: getCheckboxArray('phpcs-standards') ,
-          php7ccOpts: getCheckboxArray('php7cc-opts') ,
           phpcsfixerLevel: getCheckboxArray('phpcsfixer-level') ,
           phpmdRulesets: getCheckboxArray('phpmd-rulesets')
         };
@@ -52,7 +51,6 @@ define(function(require, exports) {
         setCheckboxesFromArray('enabled', values.enabledTools);
         setCheckboxesFromArray('phpcs-standards', values.phpcsStandards);
         setCheckboxesFromArray('phpcsfixer-level', values.phpcsfixerLevel);
-        setCheckboxesFromArray('php7cc-opts', values.php7ccOpts);
         setCheckboxesFromArray('phpmd-rulesets', values.phpmdRulesets);
         $dialog.find('input[ name="php_location" ]').val(values.PHPLocation);
   }
@@ -75,7 +73,6 @@ define(function(require, exports) {
       enabledTools: preferences.get('enabled-tools') ,
           phpcsStandards: preferences.get('phpcs-standards') ,
           phpcsfixerLevel: preferences.get('phpcsfixer-level') ,
-          php7ccOpts: preferences.get('php7cc-opts') ,
           phpmdRulesets: preferences.get('phpmd-rulesets') ,
           PHPLocation: preferences.get('php-location') ,
     };

@@ -13,13 +13,13 @@ define( function( require ) {
         if (level.length > 0) {
 		return this._command
 			.replace( '{{path}}', this._path )
-			.replace( '{{file}}', file );
+			.replace( '{{file}}', file )
             .replace( '{{type}}', '--rules=')
 			.replace( '{{level}}', level );
         } else {
 		return this._command
 			.replace( '{{path}}', this._path )
-			.replace( '{{file}}', file );
+			.replace( '{{file}}', file )
             .replace( '{{type}}', '')
 			.replace( '{{level}}','');            
         }
