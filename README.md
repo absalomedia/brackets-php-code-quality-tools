@@ -52,4 +52,3 @@ View > PHP Code Quality Tools.
 * [PHP Mess Detector](http://phpmd.org)
 * [PHP Coding Standards Fixer](http://cs.sensiolabs.org/)
 * [PHP Static Analysis](https://phpsa.dmtry.me/)
-* [PHP 7 Compatibility Checker](https://github.com/sstalle/php7cc)

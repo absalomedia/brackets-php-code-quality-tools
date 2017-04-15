@@ -21,7 +21,7 @@
 		"analysis"
 	],
 	"homepage": "https://github.com/mikaeljorhult/brackets-php-code-quality-tools",
-	"version": "0.1.11",
+	"version": "0.1.13",
 	"author": "Mikael Jorhult <mikael@jorhult.se> (http://jorhult.se)",
 	"repository": {
 		"type": "git",
@@ -35,7 +35,7 @@
 		"brackets": ">=0.37.0"
 	},
 	"i18n": [
-		"en", "fr", "it", "sv", "pt"
+		"en", "fr", "it", "sv", "pt", "de"
 	],
 	"devDependencies": {
 		"gulp": "^3.8.6",
