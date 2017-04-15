@@ -12,6 +12,7 @@ define( {
 	SETTINGS_DIALOG_ENABLE:           'Abilita',
 	SETTINGS_DIALOG_STANDARDS:        'Standard del scrittura del codice',
 	SETTINGS_DIALOG_CUSTOM_STANDARDS: 'Standard del scrittura del codice personalizzati',
+	SETTINGS_DIALOG_OPTIONS:          'CS Fixer custom commands',     
 	SETTINGS_DIALOG_NOT_AVAILABLE:    'PHP non è disponibile sulla tua macchina.  Le estenzioni non saranno in grado di eseguire qualsiasi strumento.',
 	SETTINGS_DIALOG_PHPLOCATION_TITLE: 'PHP Path',
 	SETTINGS_DIALOG_PHPLOCATION_INFO:  'Lasciare vuoto per utilizzare percorso PHP predefinito.',

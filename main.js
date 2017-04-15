@@ -34,7 +34,7 @@ define(function(require, exports, module ) {
 	preferences.definePreference('phpcs-standards', 'array', Defaults.phpcsStandards);
 	preferences.definePreference('phpmd-rulesets', 'array', Defaults.phpmdRulesets);
     preferences.definePreference('phpcsfixer-level', 'array', Defaults.phpcsfixerLevel);
-    preferences.definePreference('phpcsfixer-option', 'array', Defaults.phpcsfixerOption);
+    preferences.definePreference('phpcsfixer-option', 'string', Defaults.phpcsfixerOption);
     preferences.definePreference('php-location', 'string', Defaults.PHPLocation);
 
 	// Register extension.
