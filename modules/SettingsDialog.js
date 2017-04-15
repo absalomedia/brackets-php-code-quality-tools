@@ -73,6 +73,7 @@ define(function(require, exports) {
       enabledTools: preferences.get('enabled-tools') ,
           phpcsStandards: preferences.get('phpcs-standards') ,
           phpcsfixerLevel: preferences.get('phpcsfixer-level') ,
+          phpcsfixerOption: preferences.get('phpcsfixer-option') ,
           phpmdRulesets: preferences.get('phpmd-rulesets') ,
           PHPLocation: preferences.get('php-location') ,
     };
@@ -137,6 +138,7 @@ define(function(require, exports) {
                 preferences.set('enabled-tools', values.enabledTools);
                 preferences.set('phpcs-standards', values.phpcsStandards);
                 preferences.set('phpcsfixer-level', values.phpcsfixerLevel);
+                preferences.set('phpcsfixer-option', values.phpcsfixerOption);
                 preferences.set('phpmd-rulesets', values.phpmdRulesets);
                 preferences.set('php-location', values.PHPLocation);
                 preferences.save();
