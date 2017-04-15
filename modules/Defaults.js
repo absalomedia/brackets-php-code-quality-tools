@@ -4,8 +4,7 @@ define( function() {
 	return {
 		enabledTools: [ 'phpcs', 'phpcpd', 'phpl', 'phpmd','phpcsfixer','phpsa' ],
 		phpcsStandards: [ 'PSR1', 'PSR2' ],
-		phpcsfixerLevel: [ 'all' ],
-		php7ccOpts: ['error'],
+		phpcsfixerLevel: [ '' ],
 		phpmdRulesets: [ 'codesize', 'unusedcode', 'naming' ],
 	};
 } );
