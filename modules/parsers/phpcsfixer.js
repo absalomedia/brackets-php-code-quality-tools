@@ -9,7 +9,7 @@ define( function( require ) {
 	
 	PHPCSF.buildCommand = function( file ) {
 		var level = this.concatenateArray( this._preferences.get( 'phpcsfixer-level' ) );
-        var option = this._preferences.get( 'phpcsfixer-option' );
+        var option = '--'+this._preferences.get( 'phpcsfixer-option' );
 		
         if (level.length > 0) {
 		return this._command

@@ -88,7 +88,7 @@ define(function(require, exports) {
         }
   }
 
-  /**
+    /**
      * Exposed method to show dialog.
      */
   exports.show = function(prefs) {

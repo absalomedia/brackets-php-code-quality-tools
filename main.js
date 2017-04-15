@@ -33,9 +33,9 @@ define(function(require, exports, module ) {
 	preferences.definePreference('enabled-tools', 'array', Defaults.enabledTools);
 	preferences.definePreference('phpcs-standards', 'array', Defaults.phpcsStandards);
 	preferences.definePreference('phpmd-rulesets', 'array', Defaults.phpmdRulesets);
-	preferences.definePreference('php7cc-opts', 'array', Defaults.php7ccOpts);
-  preferences.definePreference('phpcsfixer-level', 'array', Defaults.phpcsfixerLevel);
-	preferences.definePreference('php-location', 'string', Defaults.PHPLocation);
+    preferences.definePreference('phpcsfixer-level', 'array', Defaults.phpcsfixerLevel);
+    preferences.definePreference('phpcsfixer-option', 'array', Defaults.phpcsfixerOption);
+    preferences.definePreference('php-location', 'string', Defaults.PHPLocation);
 
 	// Register extension.
 	CommandManager.register(Strings.EXTENSION_NAME, COMMAND_ID_SETTINGS, showSettingsDialog);

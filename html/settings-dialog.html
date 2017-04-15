@@ -73,10 +73,15 @@ linebreak_after_opening_tag" /> Opening Linebreak </label>
                 <label><input type="checkbox" name="phpcsfixer-level[]" value="
 strict_comparison" /> Strict Comparison </label>
                 <label><input type="checkbox" name="phpcsfixer-level[]" value="
-strict_param" /> Strict Functions </label>
-            
-                
+strict_param" /> Strict Functions </label>                
             </p>
+            <p>{{ Strings.SETTINGS_DIALOG_OPTIONS }}</p>
+            <p class="columns clearfix">
+                <label>
+                    <input type="checkbox" name="phpcsfixer-options[]" value="verbose" /> Verbose </label>
+                <label>
+                    <input type="checkbox" name="phpcsfixer-options[]" value="dry-run" /> Dry Run </label>
+            </p>            
         </fieldset>
         <fieldset class="tool tool-phpcpd">
             <legend>Copy/Paste Detector</legend>
