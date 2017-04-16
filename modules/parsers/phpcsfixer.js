@@ -9,24 +9,32 @@ define( function( require ) {
 	
 	PHPCSF.buildCommand = function( file ) {
 		var level = this.concatenateArray( this._preferences.get( 'phpcsfixer-level' ) );
-        var option = '--'+this._preferences.get( 'phpcsfixer-option' );
+        var option = this._preferences.get( 'phpcsfixer-option' );
 		
         if (level.length > 0) {
-		return this._command
+		this._command
 			.replace( '{{path}}', this._path )
 			.replace( '{{file}}', file )
             .replace( '{{type}}', '--rules=')
-			.replace( '{{level}}', level )
-            .replace( '{{option}}', option );
+			.replace( '{{level}}', level );
+        if(option.length > 0) {
+        this._command
+            .replace( '{{option}}', '--'+option );        
+            }
+        return this._command;
+            
         } else {
-		return this._command
+		this._command
 			.replace( '{{path}}', this._path )
 			.replace( '{{file}}', file )
             .replace( '{{type}}', '')
-			.replace( '{{level}}','')
-            .replace( '{{option}}', option );
+			.replace( '{{level}}','');
+        if(option.length > 0) {
+        this._command
+            .replace( '{{option}}', '--'+option );        
+            }
+        return this._command;
         }
-
     };
 	
  
